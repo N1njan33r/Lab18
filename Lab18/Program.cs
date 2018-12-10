@@ -101,6 +101,33 @@ namespace Lab18
         }
     }
 
+    public static class Algarray
+    {
+        public static void PrintOccurrence(int value, int count)
+        {
+            Console.WriteLine($"[{value}]: {count}");
+        }
+
+        public static List<int> FindElements(int[] array)
+        {
+            List<int> foundElements = new List<int>();
+            foreach (var item in array)
+            {
+                foreach (var foundItem in foundElements)
+                {
+                    if (!item.Equals(foundItem))
+                    {
+                        foundElements.Add(item);
+                    }
+                }
+            }
+
+            return foundElements;
+        }
+
+
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -149,7 +176,7 @@ namespace Lab18
 
             #region ======== Part 2 ========
             Console.WriteLine("======== Part 2 ========");
-
+            Algarray.FindElements(blahblah);
             #endregion
 
             Console.ReadKey();
